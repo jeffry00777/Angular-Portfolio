@@ -1,0 +1,115 @@
+/* 🔹 Full-screen Video Background */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 🔹 Overlay to Make Text More Visible */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+/* 🔹 Typing Effect */
+.video-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    z-index: 2;
+}
+
+.video-text-overlay h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.video-text-overlay h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* 🔹 Video Controls - Bottom Left */
+.video-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 🔹 Play/Pause Button */
+.pause-button-neon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #0ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #0ff, 0 0 40px #0ff;
+}
+
+.pause-button-neon:hover {
+    box-shadow: 0 0 15px #0ff, 0 0 50px #0ff;
+    transform: scale(1.1);
+}
+
+.pause-button-neon:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #0ff, 0 0 20px #0ff;
+}
+
+/* 🔹 Video Progress Bar */
+.progress-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-segment {
+    font-size: 24px;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.progress-segment.active {
+    color: white;
+    font-weight: bold;
+}
