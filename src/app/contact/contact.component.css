@@ -1,0 +1,5 @@
+.container {
+    padding-top: 80px; /* Adjust this based on navbar height */
+    min-height: 100vh; /* Full screen height */
+    padding-bottom: 50px;
+  }

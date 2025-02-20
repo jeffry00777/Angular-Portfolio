@@ -1,0 +1,50 @@
+/* 🔹 Ensure Projects Start Below Fixed Navbar */
+/* 🔹 Set Background Color for the Entire Page */
+.co {
+    background-color: rgb(119, 116, 116) !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🔹 Project Container Adjustments */
+.projects-container {
+    margin-top: 80px; /* Adjusted for better spacing */
+    padding-top: 20px;
+    padding-bottom: 50px; /* Space before footer */
+    max-width: 1200px; /* Limit width for better layout */
+}
+
+/* 🔹 Card Layout Tweaks */
+.card {
+    width: 100%; /* Make card width flexible */
+    max-width: 350px; /* Set max-width for uniformity */
+    height: auto; /* Maintain aspect ratio */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white; /* Ensure good contrast */
+}
+
+/* 🔹 Uniform Card Images */
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Ensures consistent height */
+    object-fit: cover; /* Ensures the image fills space */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* 🔹 Card Body Adjustments */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* 🔹 Reduce Empty Space Between Cards */
+.mb-3, .mb-4 {
+    margin-bottom: 20px !important; /* Reduces gap between rows */
+}

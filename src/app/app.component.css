@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Keeps navbar on top */
-    background: white; /* Default background */
+    background: rgb(236, 221, 221); /* Default background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease-in-out;
 }

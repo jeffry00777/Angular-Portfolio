@@ -12,8 +12,8 @@ import { NgIf, NgFor  } from '@angular/common';
 export class HomeComponent {
 
   title = 'angular_2025';
-  text1 = "What Moves You";
-  text2 = "Moves Our World";
+  text1 = "Chasing ";
+  text2 = "the American Dream";
   typingSpeed = 100;
   @ViewChild('videoPlayer', { static: false }) videoPlayer!: ElementRef;
 

@@ -2,6 +2,7 @@ import { Component, ViewChild, ElementRef, HostListener} from '@angular/core';
 import { RouterOutlet, RouterModule } from '@angular/router';
 import { NgIf, NgFor,  } from '@angular/common'; //
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -10,7 +11,7 @@ import { NgIf, NgFor,  } from '@angular/common'; //
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'angular_2025';
+  title = 'Jeffry Portfolio';
   isScrolled = false;
   
   scrollToSection(id: string) {
