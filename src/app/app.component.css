@@ -1,4 +1,50 @@
 /* 🔹 Navbar Default */
+/* 🔹 Responsive Grid for Projects */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    flex: 1 1 calc(33.333% - 20px); /* Default: 3 in a row */
+    max-width: calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🔹 Adjust for Tablets (2 in a Row) */
+@media (max-width: 991px) {
+    .project-card {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+/* 🔹 Adjust for Mobile (1 in a Row) */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+/* 🔹 Navbar Toggle Button */
+.navbar-toggler {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.navbar-toggler-icon {
+    filter: brightness(0); /* Makes the default icon black */
+}
+
+/* 🔹 Ensure Navbar Closes After Click */
+.navbar-collapse.show {
+    display: block !important;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -9,7 +55,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Keeps navbar on top */
-    background: rgb(236, 221, 221); /* Default background */
+    background: #FFFFFF; /* Default background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease-in-out;
 }

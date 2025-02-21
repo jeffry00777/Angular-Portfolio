@@ -1,3 +1,29 @@
+/* 🔹 Responsive Grid for Projects */
+@media (min-width: 992px) {
+  .projects-container .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .col-md-6 {
+      flex: 0 0 33%; /* Show 3 in a row */
+      max-width: 33%;
+  }
+}
+
+@media (max-width: 991px) {
+  .col-md-6 {
+      flex: 0 0 50%; /* Show 2 in a row on tablets */
+      max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+      flex: 0 0 100%; /* Show 1 in a row on mobile */
+      max-width: 100%;
+  }
+}
 .work-experience {
   padding-top: 80px; /* Adjust this based on navbar height */
   background-color: #e3f2fd; /* Light Blue Background */

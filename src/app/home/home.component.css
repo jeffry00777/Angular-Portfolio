@@ -36,7 +36,7 @@
 .video-text-overlay {
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
@@ -45,16 +45,29 @@
     text-transform: uppercase;
     line-height: 1.2;
     z-index: 2;
+    width: 80%; /* Makes text responsive */
 }
 
-.video-text-overlay h1 {
-    font-size: 50px;
-    font-weight: bold;
+/* 🔹 Adjust Font Sizes for Different Screens */
+@media (max-width: 991px) { /* Tablets */
+    .video-text-overlay {
+        font-size: 36px;
+        width: 90%;
+    }
+    .video-text-overlay h1 {
+        font-size: 40px;
+    }
 }
 
-.video-text-overlay h2 {
-    font-size: 50px;
-    font-weight: bold;
+@media (max-width: 768px) { /* Mobile */
+    .video-text-overlay {
+        font-size: 28px;
+        width: 95%;
+        top: 45%;
+    }
+    .video-text-overlay h1 {
+        font-size: 32px;
+    }
 }
 
 /* 🔹 Video Controls - Bottom Left */
@@ -68,10 +81,19 @@
     gap: 5px;
 }
 
+/* 🔹 Adjust Controls for Mobile */
+@media (max-width: 768px) {
+    .video-controls {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
 /* 🔹 Play/Pause Button */
 .pause-button-neon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #0ff;
     border-radius: 50%;
@@ -83,14 +105,11 @@
     box-shadow: 0 0 10px #0ff, 0 0 40px #0ff;
 }
 
-.pause-button-neon:hover {
-    box-shadow: 0 0 15px #0ff, 0 0 50px #0ff;
-    transform: scale(1.1);
-}
-
-.pause-button-neon:active {
-    transform: scale(0.9);
-    box-shadow: 0 0 5px #0ff, 0 0 20px #0ff;
+@media (max-width: 768px) {
+    .pause-button-neon {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* 🔹 Video Progress Bar */
@@ -112,4 +131,10 @@
 .progress-segment.active {
     color: white;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .progress-segment {
+        font-size: 18px;
+    }
 }

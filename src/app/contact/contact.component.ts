@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import emailjs from 'emailjs-com';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -16,6 +17,16 @@ export class ContactComponent {
   phone: string = '';
   subject: string = '';
   message: string = '';
+
+  constructor(private router: Router) {}
+  
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        window.scrollTo(0, 0); // Scroll to the top of the page
+      }
+    });
+  }
 
   sendEmail(event: Event) {
     event.preventDefault(); // Prevent form submission refresh

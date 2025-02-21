@@ -14,6 +14,7 @@ export class AppComponent {
   title = 'Jeffry Portfolio';
   isScrolled = false;
   
+  
   scrollToSection(id: string) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }
@@ -23,4 +24,10 @@ export class AppComponent {
     this.isScrolled = window.scrollY > 50; // Change navbar color if scrolled more than 50px
   }
 
+  closeNavbar() {
+    const navbar = document.querySelector('.navbar-collapse');
+    if (navbar) {
+      navbar.classList.remove('show'); // Closes the menu
+    }
+  }
 }

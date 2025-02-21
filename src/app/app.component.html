@@ -1,31 +1,58 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark" [class.scrolled]="isScrolled">
-  <div class="container-fluid justify-content-center">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link fw-bold" [routerLink]="'/'">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link fw-bold" [routerLink]="'/work-experience'"
-          >My Experience</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link fw-bold" [routerLink]="'/my-projects'"
-          >My Projects</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link fw-bold" [routerLink]="'/get-to-know-me'"
-          >Get to Know Me</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link fw-bold" [routerLink]="'/contact'">Contact</a>
-      </li>
-    </ul>
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link fw-bold" [routerLink]="'/'" (click)="closeNavbar()"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fw-bold"
+            [routerLink]="'/work-experience'"
+            (click)="closeNavbar()"
+            >My Experience</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fw-bold"
+            [routerLink]="'/my-projects'"
+            (click)="closeNavbar()"
+            >My Projects</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fw-bold"
+            [routerLink]="'/get-to-know-me'"
+            (click)="closeNavbar()"
+            >Get to Know Me</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fw-bold"
+            [routerLink]="'/contact'"
+            (click)="closeNavbar()"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<!-- This will dynamically load the components -->
+<!-- Page Content -->
 <router-outlet></router-outlet>
