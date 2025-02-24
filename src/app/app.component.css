@@ -146,6 +146,7 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
+    z-index: 9999 !important; /* Ensure it is always above all elements */
 }
 
 /* Adjustments for Laptops & Larger Screens */
