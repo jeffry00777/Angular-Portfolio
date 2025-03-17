@@ -30,6 +30,14 @@ export class AppComponent implements AfterViewInit {
 
   constructor(private http: HttpClient) {}
 
+  ngOnInit() {
+    this.isChatOpen = true;
+    setTimeout(() => this.scrollToBottom(), 100); // Auto-scroll after opening
+
+    // Auto-send a welcome message
+    this.messages.push({ text: "👋 Hi there! How can I assist you today?", sender: 'ai' });
+  }
+
   ngAfterViewInit() {
     this.scrollToBottom(); // ✅ Ensure chat is scrolled on load
   }
@@ -55,6 +63,7 @@ export class AppComponent implements AfterViewInit {
     // Call FastAPI Backend
     this.http.post<any>('https://python-ai-wdey.onrender.com/ask', payload).subscribe({
       next: (response) => {
+        this.messages = this.messages.filter(msg => msg.text !== "🤖 Thinking...");
         const aiReply = response.response || "⚠️ AI did not provide a response.";
         this.messages.push({ text: aiReply, sender: 'ai' });
         setTimeout(() => this.scrollToBottom(), 100); // ✅ Auto-scroll after AI response
