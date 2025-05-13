@@ -54,33 +54,42 @@ export class AppComponent implements AfterViewInit {
   sendMessage() {
     if (!this.userInput.trim()) return;
   
-    // Add User Message to Chat
+    // Push user message
     this.messages.push({ text: this.userInput, sender: 'user' });
   
-    // Prepare payload { "question": "user message" }
+    // Show loading message
+    this.messages.push({ text: "Sorry for the delay. I am Processing... ", sender: 'ai' });
+  
+    // Prepare payload
     const payload = { question: this.userInput };
+  
+    // Clear input field
+    this.userInput = '';
   
     // Call FastAPI Backend
     this.http.post<any>('https://python-ai-wdey.onrender.com/ask', payload).subscribe({
       next: (response) => {
-        this.messages = this.messages.filter(msg => msg.text !== "🤖 Thinking...");
+        // Remove the "Thinking..." message
+        //this.messages = this.messages.filter(msg => msg.text !== "Thinking...");
+  
         const aiReply = response.response || "⚠️ AI did not provide a response.";
         this.messages.push({ text: aiReply, sender: 'ai' });
-        setTimeout(() => this.scrollToBottom(), 100); // ✅ Auto-scroll after AI response
+  
+        setTimeout(() => this.scrollToBottom(), 10);
       },
       error: (error) => {
         console.error('Error fetching AI response:', error);
+  
+        // Remove the "Thinking..." message
+        this.messages = this.messages.filter(msg => msg.text !== " Sorry for the delay deployed in free env, Thinking... ");
+  
         this.messages.push({ text: "⚠️ AI is currently unavailable. Try again later.", sender: 'ai' });
-        setTimeout(() => this.scrollToBottom(), 100); // ✅ Auto-scroll on error message
+  
+        setTimeout(() => this.scrollToBottom(), 100);
       }
     });
-
-    // Clear Input Field
-    this.userInput = '';
-
-    // Auto-scroll to bottom
-    setTimeout(() => this.scrollToBottom(), 100);
   }
+  
 
   // ✅ Scroll to the Last Message
   scrollToBottom() {
