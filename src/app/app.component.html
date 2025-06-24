@@ -67,7 +67,6 @@
   </div>
 
   <div class="chat-body" #chatBody>
-    <!-- ✅ Added reference for auto-scroll -->
     <div *ngFor="let message of messages">
       <p [ngClass]="message.sender">{{ message.text }}</p>
     </div>
